@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// This is the class that will move the player
 public class PlayerMovementScript : MonoBehaviour 
 {
             // SerializeField exposes this value to the Editor, but not to other Scripts!
-            // It is "pseudo public"
+        
             // HorizontalPlayerAcceleration indicates how fast we accelerate Horizontally
             [SerializeField]
-            private float f_horPlayAccel = 5000f;
+            private float horizontalPlayerAcceleration = 5000f;
 
             private Rigidbody2D OURRigidbody;
 
@@ -19,12 +20,13 @@ public class PlayerMovementScript : MonoBehaviour
         OURRigidbody = GetComponent<Rigidbody2D>(); 
     }
     // Update is called once per frame
-    void Update() 
-    {
+    void Update()
+    {// Get the Horizontal Input from the player
         float HorizontalInput = Input.GetAxis("Horizontal");
-
-        if (HorizontalInput != 0.0f) {
-            Vector2 ForceToAdd=Vector2.right*HorizontalInput*f_horPlayAccel*Time.deltaTime;
+        // If the player is pressing the Horizontal Input, then move the player
+        if (HorizontalInput != 0.0f)
+        {// Calculate the force to add to the player
+            Vector2 ForceToAdd=Vector2.right*HorizontalInput*horizontalPlayerAcceleration*Time.deltaTime;
             OURRigidbody.AddForce(ForceToAdd);
             //print(HorizontalInput);
         } 

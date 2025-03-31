@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// This is the class that will spawn objects over time
 public class SpawnOverTimeScript : MonoBehaviour
 {
 
@@ -11,13 +12,13 @@ public class SpawnOverTimeScript : MonoBehaviour
     // Delay between spawns
     [SerializeField]
     private float spawnDelay = 2f;
-
+    // Reference to the Renderer component
     private Renderer ourRenderer;
 
     // Use this for initialization
     void Start()
     {
-
+        // Get the Renderer component
         ourRenderer = GetComponent<Renderer>();
 
         // Stop our Spawner from being visible!
@@ -30,6 +31,7 @@ public class SpawnOverTimeScript : MonoBehaviour
 
     void Spawn()
     {
+        // Calculate the left and right bounds of the spawn object
         float x1 = transform.position.x - ourRenderer.bounds.size.x / 2;
         float x2 = transform.position.x + ourRenderer.bounds.size.x / 2;
 

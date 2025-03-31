@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+// This is the class that will move the object forward constantly
 public class MoveForwardConstantly : MonoBehaviour
 {
     
