@@ -14,7 +14,8 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // This gets the Movement script from the object
+        movement = GetComponent<Movement>();
     }
 
     // Update is called once per frame

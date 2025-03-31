@@ -23,6 +23,7 @@ public class PlayerMovementScript : MonoBehaviour
     void Update()
     {// Get the Horizontal Input from the player
         float HorizontalInput = Input.GetAxis("Horizontal");
+
         // If the player is pressing the Horizontal Input, then move the player
         if (HorizontalInput != 0.0f)
         {// Calculate the force to add to the player

@@ -25,9 +25,13 @@ public class EnemyMoveForward : MonoBehaviour
     void Update()
     {
         // This is the force that will be added to the object
+
         Vector2 ForceToAdd = Vector2.down * acceleration * Time.deltaTime;
+
         // This method moves the object in the direction passed in
+
         ourRigidbody.AddForce(ForceToAdd);
+
        
     }
 
