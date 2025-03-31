@@ -45,6 +45,22 @@ public class ShootingScript : MonoBehaviour
             //print("Shoot!");
         }
     }
+    public void Shoot()
+    {
+        float CurrentTime = Time.time;
+        // If the current time minus the last time we fired a bullet is greater than the delay between bullets
+        if (CurrentTime - lastFiredTime > fireDelay)
+        {
+            // Calculate the spawn position of the bullet
+            Vector2 spawnPosition = new Vector2(transform.position.x, transform.position.y + bulletOffset);
+            // Spawn the bullet at the spawnPosition
+            Instantiate(bullet, spawnPosition, transform.rotation);
+            // Update the last time we fired a bullet
+            lastFiredTime = CurrentTime;
+        }
+    }
+    
+
 
     /// <summary>
     /// SampleMethod is a sample of how to use abstraction by

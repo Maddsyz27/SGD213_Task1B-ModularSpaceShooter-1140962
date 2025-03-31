@@ -7,12 +7,15 @@ public class InputManager : MonoBehaviour
 {
     // This is the reference to the Movement component
     private Movement Movement;
+    private ShootingScript shooting;
+
 
     // Start is called before the first frame update
     void Start()
     {
         // Get the Movement component
-        Movement = GetComponent<Movement>();    
+        Movement = GetComponent<Movement>();
+        shooting = GetComponent<ShootingScript>();
     }
 
     // Update is called once per frame
